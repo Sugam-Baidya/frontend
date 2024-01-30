@@ -20,22 +20,26 @@ const LoginScreen = () => {
     // Navigate to another page (replace 'AnotherPage' with the actual screen name)
     navigation.navigate("Getting Started");
   };
+
   const handleLoginAsCustomer = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/login/customer", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username,
-          password,
-        }),
-      });
+      const response = await fetch(
+        "http://192.168.254.8:4000/api/login/seller",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username,
+            password,
+          }),
+        }
+      );
 
       const data = await response.json();
 
-      if (response.ok && data.success) {
+      if (data.success) {
         console.log("Customer login successful");
         // Navigate to the Home screen or any other screen upon successful login
         navigation.navigate("Home"); // Replace 'Home' with the actual screen name
@@ -50,16 +54,19 @@ const LoginScreen = () => {
 
   const handleLoginAsSeller = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/login/seller", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username,
-          password,
-        }),
-      });
+      const response = await fetch(
+        "http://192.168.254.8:4000/api/login/seller",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username,
+            password,
+          }),
+        }
+      );
 
       const data = await response.json();
 

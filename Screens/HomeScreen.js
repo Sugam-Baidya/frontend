@@ -1,25 +1,59 @@
-//HomeScreen.js
+// HomeScreen.js
 
-import { ImageBackground, StyleSheet, Text } from "react-native";
-const HomeScreen = () => {
-  return (
-    <ImageBackground
-      source={require("../Images/gettingStarted.jpg")}
-      style={styles.background}
-    >
-      <Text>logged in</Text>
-    </ImageBackground>
-  );
-};
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { View, Text, Button } from "react-native";
 
-const styles = StyleSheet.create({
-  background: {
-    width: "100%",
-    height: "100%",
-    flex: 1,
-    justifyContent: "center",
-    fontSize: 40,
-  },
-});
+const Display = ({ navigation }) => (
+  <View
+    style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+  ></View>
+);
+
+const ProfileScreen = () => (
+  <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <Text>Profile Screen</Text>
+  </View>
+);
+
+const CartScreen = () => (
+  <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <Text>Cart Screen</Text>
+  </View>
+);
+
+const OrderHistoryScreen = () => (
+  <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <Text>Order History Screen</Text>
+  </View>
+);
+
+const AboutScreen = () => (
+  <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <Text>About Screen</Text>
+  </View>
+);
+
+const SettingsScreen = () => (
+  <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <Text>Settings Screen</Text>
+  </View>
+);
+
+const Drawer = createDrawerNavigator();
+
+const HomeScreen = () => (
+  <NavigationContainer independent={true}>
+    <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Screen name="Home" component={Display} />
+      <Drawer.Screen name="Profile" component={ProfileScreen} />
+      <Drawer.Screen name="Cart" component={CartScreen} />
+      <Drawer.Screen name="OrderHistory" component={OrderHistoryScreen} />
+      <Drawer.Screen name="About" component={AboutScreen} />
+      <Drawer.Screen name="Settings" component={SettingsScreen} />
+    </Drawer.Navigator>
+  </NavigationContainer>
+);
 
 export default HomeScreen;

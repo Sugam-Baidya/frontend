@@ -19,7 +19,7 @@ const RegisterScreen = () => {
   const handleRegisterAsCustomer = async () => {
     try {
       const response = await fetch(
-        "http://localhost:4000/api/register/customer",
+        "http://192.168.254.8:4000/api/register/customer",
         {
           method: "POST",
           headers: {
@@ -50,7 +50,7 @@ const RegisterScreen = () => {
   const handleRegisterAsSeller = async () => {
     try {
       const response = await fetch(
-        "http://localhost:4000/api/register/seller",
+        "http://192.168.254.8:4000/api/register/seller",
         {
           method: "POST",
           headers: {
