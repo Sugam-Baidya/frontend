@@ -3,18 +3,14 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { View, Text, Button } from "react-native";
+import { View, Text } from "react-native";
+import MapScreen from "./MapScreen";
+import ProfileScreen from "./ProfileScreen";
 
 const Display = ({ navigation }) => (
   <View
     style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
   ></View>
-);
-
-const ProfileScreen = () => (
-  <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-    <Text>Profile Screen</Text>
-  </View>
 );
 
 const CartScreen = () => (
@@ -50,6 +46,7 @@ const HomeScreen = () => (
       <Drawer.Screen name="Profile" component={ProfileScreen} />
       <Drawer.Screen name="Cart" component={CartScreen} />
       <Drawer.Screen name="OrderHistory" component={OrderHistoryScreen} />
+      <Drawer.Screen name="Maps" component={MapScreen} />
       <Drawer.Screen name="About" component={AboutScreen} />
       <Drawer.Screen name="Settings" component={SettingsScreen} />
     </Drawer.Navigator>

@@ -37,7 +37,7 @@ const RegisterScreen = () => {
       if (response.ok && data.success) {
         console.log("Customer registered successfully");
         // Navigate to the Home screen or any other screen upon successful registration
-        navigation.navigate("Home"); // Replace 'Home' with the actual screen name
+        navigation.navigate("RegistrationDetails"); // Replace 'Home' with the actual screen name
       } else {
         console.error("Customer registration failed");
         // Handle registration failure
@@ -68,7 +68,7 @@ const RegisterScreen = () => {
       if (response.ok && data.success) {
         console.log("Seller registered successfully");
         // Navigate to the Home screen or any other screen upon successful registration
-        navigation.navigate("Home"); // Replace 'Home' with the actual screen name
+        navigation.navigate("RegistrationDetails"); // Replace 'Home' with the actual screen name
       } else {
         console.error("Seller registration failed");
         // Handle registration failure

@@ -24,7 +24,7 @@ const LoginScreen = () => {
   const handleLoginAsCustomer = async () => {
     try {
       const response = await fetch(
-        "http://192.168.254.8:4000/api/login/seller",
+        "http://192.168.254.8:4000/api/login/customer",
         {
           method: "POST",
           headers: {

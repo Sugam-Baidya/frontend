@@ -2,7 +2,6 @@
 
 import { StyleSheet, Text, ImageBackground, View, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import FlatButton from "../Components/button";
 
 const GettingStarted = () => {
   const navigation = useNavigation();
